@@ -7,9 +7,7 @@
 #' @export
 #'
 #' @examples
-data("APG_taxonomy")
 get_taxon <- function(PlantList) {
-  if (!requireNamespace("tidyverse",quietly = T)){stop("Please install the tidyverse package first.")}
   if (class(PlantList)[1]!="tbl_df"){PlantList <- tibble::as_tibble(PlantList)}
   PlantList <- tibble::tibble("species"=unlist(PlantList[,1]))
   genus_family_list <- PlantList|>
