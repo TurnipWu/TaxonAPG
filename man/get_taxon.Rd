@@ -18,5 +18,5 @@ This R package extracts genus and family information based on APG IV from space-
 \examples{
 get_taxon("Aa")
 get_taxon(c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
-get_taxon(tibble("species"=c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
+get_taxon(data.frame("species"=c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
 }
