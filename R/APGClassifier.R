@@ -6,9 +6,11 @@
 #' @return species, genus and family
 #' @export
 #'
-#' @examples
+#' @examples get_taxon("Aa")
+#' get_taxon(c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
+#' get_taxon(tibble("species"=c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
 get_taxon <- function(PlantList) {
-  if (!requireNamespace("tidyverse",quietly = T)){stop("please install the tidyverse package first.")}
+  if (!requireNamespace("tidyverse",quietly = T)){stop("Please install the tidyverse package first.")}
   if (class(PlantList)[1]!="tbl_df"){PlantList <- tibble::as_tibble(PlantList)}
   PlantList <- tibble::tibble("species"=unlist(PlantList[,1]))
   genus_family_list <- PlantList|>
