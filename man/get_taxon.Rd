@@ -7,16 +7,11 @@
 get_taxon(PlantList)
 }
 \arguments{
-\item{PlantList}{dataframe or vector}
+\item{PlantList}{Inputs could be "vector" or "dataframe" as you like!}
 }
 \value{
-species, genus and family
+A tibble contains 3 columns: species, genus and APG-IV family.
 }
 \description{
-This R package extracts genus and family information based on APG IV from space-corrected species names
-}
-\examples{
-get_taxon("Aa")
-get_taxon(c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
-get_taxon(data.frame("species"=c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
+Extract genus and family information based on APG IV from space-corrected species names.
 }

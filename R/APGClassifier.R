@@ -1,22 +1,20 @@
 #' @title Get taxonomic info from APG IV
-#' @description This R package extracts genus and family information based on APG IV from space-corrected species names
+#' @description Extract genus and family information based on APG IV from space-corrected species names.
 #'
-#' @param PlantList dataframe or vector
+#' @param PlantList Inputs could be "vector" or "dataframe" as you like!
 #'
-#' @return species, genus and family
+#' @return A tibble contains 3 columns: species, genus and APG-IV family.
 #' @export
-#'
-#' @examples get_taxon("Aa")
-#' get_taxon(c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
-#' get_taxon(data.frame("species"=c("Pinus massoniana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
+#' @examples
 get_taxon <- function(PlantList) {
   if (!requireNamespace("tidyverse",quietly = T)){stop("Please install the tidyverse package first.")}
   if (class(PlantList)[1]!="tbl_df"){PlantList <- tibble::as_tibble(PlantList)}
+  data("APG_taxonomy")
   PlantList <- tibble::tibble("species"=unlist(PlantList[,1]))
   genus_family_list <- PlantList|>
-    purrr::map_dfr(stringr::str_squish)|>
+    purrr::map_dfr(str_squish)|>
     dplyr::rowwise()|>
-    dplyr::mutate("genus"=stringr::str_split(species, " ")[[1]][1])|>
+    dplyr::mutate("genus"=str_split(species, " ")[[1]][1])|>
     dplyr::ungroup()|>
     dplyr::left_join(APG_taxonomy,by="genus")
   return(genus_family_list)
