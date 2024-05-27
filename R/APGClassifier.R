@@ -8,6 +8,7 @@
 #' @examples get_taxon("Aa")
 #' @examples get_taxon(c("Pinus massonlana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
 #' @examples get_taxon(data.frame("species"=c("Pinus massonlana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
+
 get_taxon <- function(PlantList) {
   if (!requireNamespace("tidyverse",quietly = T)){stop("Please install the tidyverse package first.")}
   if (class(PlantList)[1]!="tbl_df"){PlantList <- tibble::as_tibble(PlantList)}

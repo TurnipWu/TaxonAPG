@@ -15,3 +15,8 @@ A tibble contains 3 columns: species, genus and APG-IV family.
 \description{
 Extract genus and family information based on APG IV from space-corrected species names.
 }
+\examples{
+get_taxon("Aa")
+get_taxon(c("Pinus massonlana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu"))
+get_taxon(data.frame("species"=c("Pinus massonlana","Cunninghamia lanceolata","Lindera glauca","Litsea cubeba","Sassafras tzumu")))
+}
