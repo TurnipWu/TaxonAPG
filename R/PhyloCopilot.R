@@ -3,7 +3,7 @@
 #'
 #' @param PlantList The first column of the dataframe, or the entire vector, consists of standard Latin names recognized by the World Plants website.
 #'
-#' @return A phylogenetic tree Constructed by U.PhyloMaker package.
+#' @return A phylogenetic tree constructed by U.PhyloMaker package.
 #' @export
 
 get_phylo <- function(PlantList) {

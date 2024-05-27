@@ -10,7 +10,7 @@ get_phylo(PlantList)
 \item{PlantList}{The first column of the dataframe, or the entire vector, consists of standard Latin names recognized by the World Plants website.}
 }
 \value{
-A phylogenetic tree Constructed by U.PhyloMaker package.
+A phylogenetic tree constructed by U.PhyloMaker package.
 }
 \description{
 Constructing a phylogenetic tree based on the APG IV classification system and the megatree backbone.

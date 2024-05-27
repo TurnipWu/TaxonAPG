@@ -2,3 +2,4 @@
 
 export(get_phylo)
 export(get_taxon)
+export(plot_phylo)
