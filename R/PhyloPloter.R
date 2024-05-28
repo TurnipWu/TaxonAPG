@@ -8,7 +8,7 @@
 
 
 plot_phylo <- function(PhyloTree,NodeColor=c("#f5c88f","#b3c384","#73a66b")){
-  if (class(Phylotree[[1]])!="phylo"){stop("Please input the phylogenetic tree constructed by the U.phylomaker package.")}
+  if (class(PhyloTree[[1]])!="phylo"){stop("Please input the phylogenetic tree constructed by the U.phylomaker package.")}
   if (!requireNamespace("tidyverse",quietly = T)){stop("Please install the tidyverse package first.")}
   if (!requireNamespace("ggtree",quietly = T)){stop("Please install the ggtree package first.")}
 
