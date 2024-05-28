@@ -4,7 +4,7 @@
 \alias{plot_phylo}
 \title{Plot a phylotree with node types}
 \usage{
-plot_phylo(PhyloTree, NoteColor = c("#f5c88f", "#b3c384", "#73a66b"))
+plot_phylo(PhyloTree, NodeColor = c("#f5c88f", "#b3c384", "#73a66b"))
 }
 \arguments{
 \item{PhyloTree}{A phylogenetic tree constructed by U.Phylomaker package.}
