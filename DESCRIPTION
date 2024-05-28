@@ -16,4 +16,6 @@ Depends:
 LazyData: true
 Imports: 
     ggtree,
-    U.PhyloMaker
+    U.PhyloMaker,
+    picante,
+    U.Taxonstand
