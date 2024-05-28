@@ -10,6 +10,6 @@ get_phylo <- function(PlantList) {
   if (!requireNamespace("U.PhyloMaker",quietly = T)){stop("Please install the U.PhyloMaker package first.")}
   data("Megatree")
   data("APG_taxonomy")
-  result <- U.PhyloMaker::phylo.maker(get_taxon(sp.list), Megatree, APG_taxonomy, nodes.type = 1, scenario = 3)
+  result <- U.PhyloMaker::phylo.maker(get_taxon(PlantList), Megatree, APG_taxonomy, nodes.type = 1, scenario = 3)
   return(result)
 }
