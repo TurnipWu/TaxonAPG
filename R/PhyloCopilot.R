@@ -11,5 +11,13 @@ get_phylo <- function(PlantList) {
   data("Megatree")
   data("APG_taxonomy")
   result <- U.PhyloMaker::phylo.maker(get_taxon(PlantList), Megatree, APG_taxonomy, nodes.type = 1, scenario = 3)
+
+  if(class(result)!=list){
+    sp.list <- PlantList|>
+      get_taxon()|>
+      dplyr::mutate(output.note="present in megatree")
+    result <- list(result,sp.list)
+  }
+
   return(result)
 }
