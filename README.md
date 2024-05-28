@@ -17,7 +17,7 @@ For the reason that the above packages cannot be directly downloaded from CRAN. 
 ```
 devtools::install_github("TurnipWu/TaxonAPG")
 ```
-## 2 Wrokflow
+## 2 Workflow
 ### 2.1 Standardize plantlist, based on the _U.Taxonstand_ package
 Use the _stand_taxon_ function to accomplish this task. The input values can be either a vector or a data frame, where the first column represents the plantlist requiring standardization.
 ```
