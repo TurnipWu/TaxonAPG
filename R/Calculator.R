@@ -13,14 +13,12 @@ diversity_phylo <- function(PhyloTree,abundance_matrix,null="taxa.labels",run=99
   if (!requireNamespace("picante",quietly = T)){stop("Please install the picante package first.")}
   pd_dist <- stats::cophenetic(PhyloTree[[1]])
 
-  if(FALSE%in%(colnames(abundance_matrix)%in%PhyloTree[[1]]$tip.label)){
-    cat(colnames(abundance_matrix)[!colnames(abundance_matrix)%in%PhyloTree[[1]]$tip.label],"\n")
-    stop("These species are not present in the phylogenetic tree.")
-  }
-
   colnames(abundance_matrix) <- gsub(" ","_",stringr::str_squish(colnames(abundance_matrix)))
-  colnames(abundance_matrix) <- gsub("\\.","_",stringr::str_squish(colnames(abundance_matrix)))
 
+  if(FALSE%in%(colnames(abundance_matrix)%in%PhyloTree[[1]]$tip.label)){
+    print(colnames(abundance_matrix)[!colnames(abundance_matrix)%in%PhyloTree[[1]]$tip.label])
+    stop("These species are not present in the phylogenetic tree.\n NOTE: Don't worry about extra underlines or spaces in your species name, for we have already revise them.")
+  }
 
   NTI <- picante::ses.mntd(abundance_matrix,pd_dist,
                            null.model = null,
